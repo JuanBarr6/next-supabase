@@ -7,12 +7,10 @@ import Link from "next/link";
 import { LoginForm } from "@/feature/auth-pages/sign-in/componets/login-form";
 
 export default async function Login(props: { searchParams: Promise<Message> }) {
-  console.log("Login page");
-
   const searchParams = await props.searchParams;
   return (
-    <div className="flex flex-col gap-4">
-      <form className="flex flex-col min-w-64 border p-4">
+    <div className="flex flex-col gap-4 w-80">
+      <form className="flex flex-col max-w-64 border p-4">
         <h1 className="text-2xl font-medium">Sign in</h1>
         <p className="text-sm text-foreground">
           Don't have an account?{" "}
@@ -47,7 +45,6 @@ export default async function Login(props: { searchParams: Promise<Message> }) {
           <FormMessage message={searchParams} />
         </div>
       </form>
-
       <LoginForm />
     </div>
   );
