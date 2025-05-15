@@ -35,14 +35,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-20 items-center">
+          <main className="max-h-screen flex flex-col">
+            <div className="flex-1 w-full max-h-screen  flex flex-col">
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
                 <div className="w-full flex p-3 px-5 justify-end text-sm ">
                   {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
                 </div>
               </nav>
-              <div className="flex flex-col gap-20  p-5">{children}</div>
+              <div className="flex w-full h-full overflow-hidden  flex-col">
+                {children}
+              </div>
             </div>
           </main>
         </ThemeProvider>
